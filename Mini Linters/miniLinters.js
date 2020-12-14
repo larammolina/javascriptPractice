@@ -10,3 +10,38 @@ console.log(storyWords.length);
 let betterWords = storyWords.filter( word => {
   return !unnecessaryWords.includes(word);
 });
+
+//console.log(betterWords);
+
+let reallyCount = 0;
+let veryCount = 0;
+let basicallyCount = 0;
+
+for (word of storyWords) {
+  if (word === "really") {
+    reallyCount += 1;
+  } else if (word === "very") {
+    veryCount += 1;
+  } else if (word === "basically") {
+    basicallyCount += 1;
+  }
+}
+
+console.log(reallyCount);
+console.log(basicallyCount);
+console.log(veryCount);
+ 
+ let sentenceCount = 0;
+
+ for (word of storyWords) {
+   //console.log(word);
+   //console.log(word[word.length-1]);
+   let lastLetter = word[word.length-1];
+   if (lastLetter === "." || lastLetter === "!") {
+     sentenceCount+=1;
+   }
+ }
+
+ console.log(sentenceCount);
+
+ console.log(betterWords.join(" "));
